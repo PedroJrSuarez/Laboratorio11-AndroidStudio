@@ -1,0 +1,25 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // Cada usuario solo puede leer/editar/eliminar SUS cursos
+    match /cursos/{cursoId} {
+      // Leer / consultar: el documento debe pertenecer al usuario autenticado
+      allow read: if request.auth != null
+                  && resource.data.userId == request.auth.uid;
+
+      // Crear: el userId del nuevo documento debe ser el del usuario autenticado
+      allow create: if request.auth != null
+                    && request.resource.data.userId == request.auth.uid;
+
+      // Actualizar: debe ser el dueño y no puede cambiar el userId
+      allow update: if request.auth != null
+                    && resource.data.userId == request.auth.uid
+                    && request.resource.data.userId == request.auth.uid;
+
+      // Eliminar: solo el dueño
+      allow delete: if request.auth != null
+                    && resource.data.userId == request.auth.uid;
+    }
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "340670092910",
+    "project_id": "authfirebaseapp-c804e",
+    "storage_bucket": "authfirebaseapp-c804e.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:340670092910:android:2f737657d4fb6b8556787f",
+        "android_client_info": {
+          "package_name": "com.tecsup.suarez"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBFlHp1KwEcy6Y1ll6lNYX78ZWkROY0UYc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
